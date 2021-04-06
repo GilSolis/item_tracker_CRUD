@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector Items</title>
+</head>
+
+<body>
+
+    <h1>Add to collection:</h1>
+    <form action="/addItem" method="POST">
+        <input type="text" placeholder="Collectors Item" name='item' required>
+        <input type="number" placeholder="How many?" name='qty' min="1" required>
+        <input type="submit">
+    </form>
+
+    <h1>What's in your collection?</h1>
+    <ul class="items">
+        <% for(let i=0; i<data.length; i++) {%>
+            <li class="item">
+                <button>Add 1</button>
+                <span>
+                    <%= data[i].item %>
+                </span>
+                <span>
+                    <%= data[i].qty %>
+                </span>
+                <button>Delete</button>
+                <button>Remove 1</button>
+            </li>
+
+            <%}%>
+    </ul>
+
+
+</body>
+
+</html>
